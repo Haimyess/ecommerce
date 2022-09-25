@@ -1,6 +1,6 @@
 /** @format */
 
-const { newPurchase } = require("../modules/Orders.js");
+const { newPurchase } = require("../models/orders");
 
 const _newPurchase = (req, res) => {
   // changed here

@@ -6,7 +6,7 @@ const {
   _getAllProducts,
   _getCategory,
   _getProduct,
-} = require("../controlers/products.js");
+} = require("../ controlers/products");
 
 // To All products
 router.get("/all", _getAllProducts);
