@@ -25,6 +25,8 @@ app.use(express.json());
 app.use("/api/products", products_router);
 app.use("/api/order", order_router);
 
+app.use(express.static(__dirname + "/public"));
+
 // const express = require("express");
 
 // const app = express();
