@@ -15,8 +15,8 @@ dotenv.config();
 const cors = require("cors");
 app.use(cors());
 // Listenting to the port 5000 in localhost
-app.listen(process.env.PORT || 5000, () => {
-  console.log(`listen on port ${process.env.PORT || 5000}`);
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`listen on port ${process.env.PORT || 3001}`);
 });
 
 app.use(express.urlencoded({ extended: true }));
