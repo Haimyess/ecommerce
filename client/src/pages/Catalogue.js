@@ -6,7 +6,7 @@ import React from "react";
 
 import Categories from "./Categories";
 
-import "./categories.css";
+import "../styles/categories.css";
 
 function Catalogue() {
   return (

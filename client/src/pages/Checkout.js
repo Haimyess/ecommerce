@@ -8,7 +8,7 @@ import { CartContext } from "../contexts/CartContext";
 
 import { useForm } from "react-hook-form";
 
-import "./styles/checkout.css";
+import "../styles/checkout.css";
 
 import {
   MDBCard,

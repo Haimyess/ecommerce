@@ -5,7 +5,7 @@ import { Form, FormControl } from "react-bootstrap/";
 import { Link } from "react-router-dom";
 // import OutsideClickHandler from "react-outside-click-handler";
 
-import "./Styles/searchbar.css";
+import "../styles/searchbar.css";
 
 const SearchBar = ({ searchDivRef, isOpen }) => {
   const [searchState, setSearchState] = useState("");

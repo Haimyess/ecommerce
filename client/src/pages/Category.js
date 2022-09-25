@@ -9,7 +9,7 @@ import React from "react";
 import App from "../App";
 
 // Importing styles
-import "./styles/Category.css";
+import "../styles/categories.css";
 
 import Filter from "../components/Filter";
 import Cart from "./Cart";

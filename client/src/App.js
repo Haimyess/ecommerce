@@ -8,7 +8,7 @@ import { LoginModalProvider } from "./contexts/LoginModalContext";
 // import { ProductsProvider } from "./contexts/ProductsContext";
 
 // Importing bootstrap
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Importing components
 import Cart from "./pages/Cart";
@@ -21,7 +21,7 @@ import NotFound from "./pages/NotFound";
 import SearchPage from "./pages/SearchPage";
 
 import Signup from "./pages/Signup";
-import SharedLayout from "./Layout/SharedLayout";
+import SharedLayout from "../src/layout/SharedLayout";
 import Checkout from "./pages/Checkout";
 import ThanksPage from "./pages/ThanksPage";
 // import { categoriesArray } from "./categoriesArray";

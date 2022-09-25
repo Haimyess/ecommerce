@@ -4,7 +4,7 @@ import React, { useEffect, useState, useContext } from "react";
 
 import { CartContext } from "../contexts/CartContext";
 
-import "./styles/Category.css";
+import "../styles/Category.css";
 
 import { useParams } from "react-router-dom";
 

@@ -16,14 +16,14 @@ const cors = require("cors");
 app.use(cors());
 // Listenting to the port 5000 in localhost
 app.listen(process.env.PORT || 3001, () => {
-  console.log(`listen on port ${process.env.PORT || 3001}`);
+  console.log(`listen on port ${process.env.PORT}`);
 });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/api/products", products_router);
-// app.use("/api/order", ord/er_router);
+app.use("/api/order", order_router);
 
 // const express = require("express");
 

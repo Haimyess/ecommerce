@@ -8,7 +8,7 @@ import { LoginModalContext } from "../contexts/LoginModalContext";
 import { CartContext } from "../contexts/CartContext";
 
 import SearchBar from "./SearchBar";
-import "../components/Header.css";
+import "../styles/Header.css";
 import { Link } from "react-router-dom";
 
 import {

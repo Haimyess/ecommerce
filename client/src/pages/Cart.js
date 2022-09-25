@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 // import Footer from "../components/Footer";
 // import Header from "../components/Header";
 
-import "./categories.css";
+import "../styles/categories.css";
 
 import { CartContext } from "../contexts/CartContext";
 

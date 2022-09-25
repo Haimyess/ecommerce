@@ -5,7 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 // import { ShowContext } from "./Header";
 import { LoginModalContext } from "../contexts/LoginModalContext";
 
-import "./styles/signup.css";
+import "../styles/signup.css";
 
 const SignUp = () => {
   const [show, setShow] = useContext(LoginModalContext);
