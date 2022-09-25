@@ -1,0 +1,41 @@
+CREATE TABLE products (
+    product_id SERIAL PRIMARY KEY,
+    product_name VARCHAR(255),
+	product_category VARCHAR(255),
+	product_subcategory VARCHAR(255),
+	product_type VARCHAR(255),
+    product_description TEXT ,
+    product_price INTEGER,
+	product_image VARCHAR(255),
+	product_brand VARCHAR(255)
+	
+);
+
+INSERT INTO products (product_name, product_category, product_subcategory, product_type, product_description, product_price, product_image, product_brand)
+VALUES 
+('Basmati Rice',  'Grains', 'Basmati', 'Rice', 'Fluffy and light, this long grained rice is named after the tropical basmati blossom of South East Asia.', 10, 'https://pixabay.com/images/id-563796', 'Pakistani Night'),
+('Whole Rice',  'Grains', 'Whole', 'Rice', 'Fluffy and light, this long grained rice is named after the tropical basmati blossom of South East Asia.', 8, 'https://pixabay.com/images/id-563796', 'Osem'),
+('Persian Rice',  'Grains', 'Persian', 'Rice', 'Fluffy and light, this long grained rice is named after the tropical basmati blossom of South East Asia.', 9, 'https://pixabay.com/images/id-563796', 'Teheran');
+
+
+
+
+SELECT * FROM products;
+
+
+
+ALTER TABLE products
+ADD COLUMN  product_image VARCHAR(255);
+-- DELETING MULTIPLE ROWS/RECORDS
+
+
+DELETE  FROM products
+WHERE  product_id IN(35, 36);
+
+
+-- ADD DATA TO A ROW WITH SPECIFIC ID. WE PUTTED AN URL INTO THE PRODUCT_IMAGE COLUMN ONE BY ONE, BY ID..
+UPDATE products
+SET product_image = 'https://cdn.pixabay.com/photo/2013/08/11/19/46/coffee-171653_1280.jpg'
+WHERE product_id = 3;
+
+
