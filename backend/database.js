@@ -11,13 +11,14 @@ dotenv.config();
 const database = knex({
   client: "pg",
   connection: {
-    connectionString: process.env.DATABASE_URL,
-    // host: process.env.DB_HOST,
-    // user: process.env.DB_USER,
-    // port: process.env.DB_PORT,
-    // password: process.env.DB_PASS,
-    // database: process.env.DB_NAME,
-    ssl: { rejectUnauthorized: false },
+    connectionString: process.env.DATABASE_URL || {
+      host: process.env.DB_HOST,
+      user: process.env.DB_USER,
+      port: process.env.DB_PORT,
+      password: process.env.DB_PASS,
+      database: process.env.DB_NAME,
+      ssl: { rejectUnauthorized: false },
+    },
   },
 });
 
