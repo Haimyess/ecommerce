@@ -4,12 +4,13 @@ import React, { useState, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // import { ShowContext } from "./Header";
 import { LoginModalContext } from "../contexts/LoginModalContext";
+import LoginModal from "../components/LogInModal";
 
 import "../styles/signup.css";
 
 const SignUp = () => {
   const [show, setShow] = useContext(LoginModalContext);
-
+  console.log(show);
   // console.log(show);
   const [errorMsg, setErrorMsg] = useState("");
   const [users, setUsers] = useState([]);
@@ -51,6 +52,11 @@ const SignUp = () => {
 
     // navigate("/");
     // setShow(true); // show modal
+  };
+
+  const handleRegisterModal = () => {
+    navigate("/");
+    setShow(true);
   };
 
   return (
@@ -101,7 +107,8 @@ const SignUp = () => {
                 <button type='submit'>Sign Up</button>
               </div>
               <p>
-                Already registered <Link to='/sign-in'>sign in?</Link>
+                Already registered{" "}
+                <button onClick={handleRegisterModal}>sign in?</button>
               </p>
             </form>
 
@@ -114,6 +121,8 @@ const SignUp = () => {
           </div>
         </div>
       </div>
+
+      {show && <LoginModal />}
     </div>
   );
 };
