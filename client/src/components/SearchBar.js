@@ -1,9 +1,12 @@
 /** @format */
 
 import React, { useEffect, useState, useContext, useRef } from "react";
-import { Form, FormControl } from "react-bootstrap/";
+import { Form, FormControl, InputGroup } from "react-bootstrap/";
 import { Link } from "react-router-dom";
 // import OutsideClickHandler from "react-outside-click-handler";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 import "../styles/searchbar.css";
 
@@ -79,12 +82,21 @@ const SearchBar = ({ searchDivRef, isOpen }) => {
     <>
       <div>
         <Form onSubmit={handleSubmit} className='form'>
-          <FormControl
-            type='search'
-            placeholder='Search'
-            aria-label='Search'
-            onChange={handleSearch}
-          />
+          <InputGroup>
+            <FormControl
+              className='search-color'
+              type='search'
+              placeholder='Search'
+              aria-label='Search'
+              onChange={handleSearch}
+            />
+            <div className='magnif-glass-container'>
+              <FontAwesomeIcon
+                className='magnif-glass'
+                icon={faMagnifyingGlass}
+              />
+            </div>
+          </InputGroup>
         </Form>
 
         <div

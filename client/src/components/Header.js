@@ -2,7 +2,18 @@
 
 import React, { useState, useEffect, useRef, useContext } from "react";
 
+import logo from "../media/images/Shopy-logo.png";
+
 import LoginModal from "../components/LogInModal";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBarsStaggered,
+  faCartShopping,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
+
+import Badge from "@mui/material/Badge";
 
 import { LoginModalContext } from "../contexts/LoginModalContext";
 import { CartContext } from "../contexts/CartContext";
@@ -87,14 +98,14 @@ function Header({ qty }) {
 
   return (
     <>
-      <Navbar bg='light' expand='lg'>
-        <Container fluid>
-          <p>
-            <Link className='logo-home' to='/'>
-              {" "}
-              Logo{" "}
-            </Link>
-          </p>
+      <Navbar bg='light' expand='lg' className='navbar-fix-top bottom-border'>
+        <Container fluid className='container'>
+          <Link to='/'>
+            <div>
+              <img className='logo-home' src={logo} alt='' />
+            </div>
+          </Link>
+
           <Navbar.Toggle aria-controls='navbarScroll' />
           <Navbar.Collapse
             id='navbarScroll'
@@ -103,7 +114,11 @@ function Header({ qty }) {
               className='my-2 my-lg-0'
               style={{ maxHeight: "100px" }}
               navbarScroll>
-              <Link to='/catalogue'> Catalogue</Link>
+              <Link className='cat-btn' to='/catalogue'>
+                {/* <FontAwesomeIcon icon='fa-solid fa-bars' /> */}
+                <FontAwesomeIcon icon={faBarsStaggered} /> &nbsp;
+                <span>Catalogue</span>
+              </Link>
 
               {/* <NavDropdown title='Location' id='navbarScrollingDropdown'>
                 <NavDropdown.Item href='#action3'>Netanya</NavDropdown.Item>
@@ -117,15 +132,22 @@ function Header({ qty }) {
             </Nav>
 
             <SearchBar searchDivRef={searchDivRef} isOpen={isOpen} />
-            <div className='d-flex justify-content-md-center'>
-              <Link className='cart' to='/cart'>
+            <div className='d-flex justify-content-md-center '>
+              {/* <Link className='cart' to='/cart'>
                 Cart <span className='cart-badge'>({cartTotal()})</span>
-              </Link>
-
+              </Link> */}
+              <Link className='cart color' to='/cart'>
+                <Badge badgeContent={cartTotal()} color='primary'>
+                  <FontAwesomeIcon icon={faCartShopping} size='xl' />
+                </Badge>
+                <span>Cart</span>
+              </Link>{" "}
               {<LoginModal handleClose={handleClose} />}
-              <Button onClick={handleShow} variant='outline-success'>
-                Log In
-              </Button>
+              {/* <Button onClick={handleShow} variant='outline-success'></Button> */}
+              <div onClick={handleShow} className='login-btn color'>
+                <FontAwesomeIcon icon={faUser} size='xl' />
+                <span> Login</span>
+              </div>
             </div>
             {/* <FontAwesomeIcon icon='fa-solid fa-cart-shopping' /> */}
           </Navbar.Collapse>
