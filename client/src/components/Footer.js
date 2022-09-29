@@ -9,6 +9,10 @@ import {
   MDBIcon,
 } from "mdb-react-ui-kit";
 
+import logo from "../media/images/Shopy-logo.png";
+
+import "../styles/footer.css";
+
 function Footer() {
   return (
     <>
@@ -47,47 +51,43 @@ function Footer() {
             <MDBRow className='mt-3'>
               <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
                 <h6 className='text-uppercase fw-bold mb-4'>
-                  <MDBIcon icon='gem' className='me-3' />
-                  Company name
+                  {/* <MDBIcon icon='gem' className='me-3' /> */}
+                  <img className='logo' src={logo} alt='logo' />
                 </h6>
                 <p>
-                  Here you can use rows and columns to organize your footer
-                  content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit.
+                  From our humble beginnings as a small discount retailer in Tel
+                  Aviv, Shopy has opened thousands of stores in the Country and
+                  expanded internationally.
                 </p>
               </MDBCol>
 
               <MDBCol md='2' lg='2' xl='2' className='mx-auto mb-4'>
-                <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
+                <h6 className='text-uppercase fw-bold mb-4 footer-title'>
+                  Products
+                </h6>
                 <p>
                   <a href='#!' className='text-reset'>
-                    Angular
+                    Fruits
+                  </a>
+                </p>
+
+                <p>
+                  <a href='#!' className='text-reset'>
+                    Grains
                   </a>
                 </p>
                 <p>
                   <a href='#!' className='text-reset'>
-                    React
-                  </a>
-                </p>
-                <p>
-                  <a href='#!' className='text-reset'>
-                    Vue
-                  </a>
-                </p>
-                <p>
-                  <a href='#!' className='text-reset'>
-                    Laravel
+                    Alochol
                   </a>
                 </p>
               </MDBCol>
 
               <MDBCol md='3' lg='2' xl='2' className='mx-auto mb-4'>
-                <h6 className='text-uppercase fw-bold mb-4'>Useful links</h6>
-                <p>
-                  <a href='#!' className='text-reset'>
-                    Pricing
-                  </a>
-                </p>
+                <h6 className='text-uppercase fw-bold mb-4 footer-title'>
+                  Useful links
+                </h6>
+
                 <p>
                   <a href='#!' className='text-reset'>
                     Settings
@@ -106,20 +106,19 @@ function Footer() {
               </MDBCol>
 
               <MDBCol md='4' lg='3' xl='3' className='mx-auto mb-md-0 mb-4'>
-                <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
+                <h6 className='text-uppercase fw-bold mb-4 footer-title'>
+                  Contact
+                </h6>
                 <p>
                   <MDBIcon icon='home' className='me-2' />
-                  New York, NY 10012, US
+                  Tel Aviv, Israel
                 </p>
                 <p>
                   <MDBIcon icon='envelope' className='me-3' />
-                  info@example.com
+                  contact@shopy.com
                 </p>
                 <p>
-                  <MDBIcon icon='phone' className='me-3' /> + 01 234 567 88
-                </p>
-                <p>
-                  <MDBIcon icon='print' className='me-3' /> + 01 234 567 89
+                  <MDBIcon icon='phone' className='me-3' /> 052 332 189 70
                 </p>
               </MDBCol>
             </MDBRow>

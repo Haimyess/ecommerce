@@ -6,13 +6,14 @@ import { Link, useParams } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
 
 import React from "react";
-import App from "../App";
+// import App from "../App";
 
 // Importing styles
 import "../styles/categories.css";
+import "../styles/Category.css";
 
 import Filter from "../components/Filter";
-import Cart from "./Cart";
+// import Cart from "./Cart";
 
 export const CatgContext = createContext();
 
@@ -92,8 +93,9 @@ export const Category = ({ onAdd, qty }) => {
   }, []);
 
   return (
-    <>
+    <div className='category-wrapper'>
       <h1>{params.type}</h1>
+      {/* <div> */}
       <div className='category-container'>
         <aside className='category-aside '>
           <CatgContext.Provider
@@ -133,6 +135,6 @@ export const Category = ({ onAdd, qty }) => {
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 };

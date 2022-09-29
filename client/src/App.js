@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 
 import { CartContext } from "./contexts/CartContext";
 import { LoginModalProvider } from "./contexts/LoginModalContext";
-// import { ProductsProvider } from "./contexts/ProductsContext";
+import { ProductsProvider } from "./contexts/ProductsContext";
 
 // Importing bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -27,6 +27,8 @@ import ThanksPage from "./pages/ThanksPage";
 // import { categoriesArray } from "./categoriesArray";
 
 import "./App.css";
+// importing this file we are able to access the variables globally, in each on eof the stylesheets that we have.
+import "./styles/variables.css";
 
 function App() {
   const { cart, setCart } = useContext(CartContext);
@@ -71,7 +73,14 @@ function App() {
           <Route
             path='/'
             element={<SharedLayout qty={{ quantity, setQuantity }} />}>
-            <Route index element={<Home />} />
+            <Route
+              index
+              element={
+                <ProductsProvider>
+                  <Home />
+                </ProductsProvider>
+              }
+            />
             <Route path='/search' element={<SearchPage />} />
 
             <Route

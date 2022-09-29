@@ -15,7 +15,8 @@ export const ProductsProvider = ({ children }) => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await fetch(`/api/products/${params.type}`);
+        const res = await fetch("/api/products/all");
+        // const res = await fetch(`/api/products/${params.type}`);
         const data = await res.json();
 
         setProducts(data);

@@ -35,7 +35,7 @@ WHERE  product_id IN(35, 36);
 
 -- ADD DATA TO A ROW WITH SPECIFIC ID. WE PUTTED AN URL INTO THE PRODUCT_IMAGE COLUMN ONE BY ONE, BY ID..
 UPDATE products
-SET product_image = 'https://cdn.pixabay.com/photo/2013/08/11/19/46/coffee-171653_1280.jpg'
-WHERE product_id = 3;
+SET product_image = 'https://images.unsplash.com/photo-1502825868325-37569f642e95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2669&q=80'
+WHERE product_id = 2;
 
 
