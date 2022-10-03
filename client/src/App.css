@@ -1,5 +1,9 @@
-.App {
+/* .App {
   text-align: center;
+} */
+
+* {
+  font-family: 'Noto Sans Mono', monospace;
 }
 .app-container {
   
@@ -32,6 +36,35 @@
 .App-link {
   color: #61dafb;
 }
+
+
+/* -------------------------------------------------- */
+/* -------------PRODUCTS COMPONENTS WRAPPER------------ */
+/* -------------------------------------------------- */
+
+/* ------------POPULAR PRODUCTS */
+/* ------------MOST VIEWED PRODUCTS */
+/* ------------RECENTLY VIEWED PRODUCTS */
+
+.products-wrapper {
+
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  /* align-items: center; */
+
+
+}
+
+.main-components-wrapper {
+  /* border: 1px solid red; */
+  height: 100%;
+
+}
+
+
+
+
 
 @keyframes App-logo-spin {
   from {

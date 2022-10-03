@@ -43,10 +43,10 @@
     margin: 0 auto;
 }
 
-.product-img{
+/* .product-img{
     object-fit: contain;
     max-width: 50%;
-}
+} */
 
 .category-container {
     display: flex;

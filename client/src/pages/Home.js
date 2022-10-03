@@ -9,12 +9,9 @@ import "../styles/home.css";
 
 import categories from "../media/categoriesHome";
 
-import { ProductsContext } from "../contexts/ProductsContext";
-import ProductCard from "../components/ProductCard";
+import PopularProducts from "../components/PopularProducts";
 
 function Home() {
-  const [products, setProducts] = useContext(ProductsContext);
-  // console.log(products);
   return (
     <main className='main-wrapper'>
       <div className='slider-container'>
@@ -41,11 +38,7 @@ function Home() {
       <h3 className='categories-home-title'>Popular Products</h3>
       {/* </div> */}
 
-      <div className='products-home'>
-        {products.map((product) => {
-          return <ProductCard props={product} />;
-        })}
-      </div>
+      <PopularProducts />
 
       {/* <Banner />
       <Grid /> */}
