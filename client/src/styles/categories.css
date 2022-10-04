@@ -4,6 +4,95 @@
     padding: 0%;
 }
 
+
+.grid-wrapper {
+    /* width: 70%; */
+    margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(12, 50px) ;
+grid-template-rows: auto;
+grid-template-areas: 
+"fruits fruits fruits fruits  vegetables vegetables vegetables  vegetables grains grains grains grains"
+"meat meat meta meat meat meat alcohol alcohol alcohol alcohol alcohol alcohol" 
+"vegan cereals drinks dairy" 
+;
+
+}
+
+
+.category-grid {
+    padding: 3rem;
+    /* width: 200px; */
+    border: 1px solid #000;
+}
+
+
+.fruits {
+    grid-area: fruits;
+}
+
+.alcohol {
+    grid-area: alcohol;
+}
+.cereals {
+    grid-area: cereals;
+}
+.drinks {
+    grid-area: drinks;
+}
+.grains {
+    grid-area: grains;
+}
+.meat {
+    grid-area:meat ;
+}
+.vegan {
+    grid-area: vegan ;
+}
+.dairy {
+    grid-area:dairy ;
+}
+.vegetables {
+    grid-area: vegetables;
+}
+
+/* 
+Fruits grains cereals
+    alcohol meat
+vegan dairy vegetables
+       drinks
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .category-img {
   object-fit: contain;
   height: 80%;

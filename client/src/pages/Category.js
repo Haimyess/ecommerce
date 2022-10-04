@@ -13,6 +13,7 @@ import "../styles/categories.css";
 import "../styles/Category.css";
 
 import Filter from "../components/Filter";
+import ProductCard from "../components/ProductCard";
 // import Cart from "./Cart";
 
 export const CatgContext = createContext();
@@ -93,8 +94,8 @@ export const Category = ({ onAdd, qty }) => {
   }, []);
 
   return (
-    <div className='category-wrapper'>
-      <h1>{params.type}</h1>
+    <div>
+      <h1 className='category-title'>{params.type}</h1>
       {/* <div> */}
       <div className='category-container'>
         <aside className='category-aside '>
@@ -116,7 +117,8 @@ export const Category = ({ onAdd, qty }) => {
         <div className='category-wrapper'>
           {catgProducts.map((product) => {
             return (
-              <div
+              <ProductCard onAdd={onAdd} product={product} />
+              /* <div
                 className='product-card'
                 key={product.product_id}
                 id={product.product_id}>
@@ -130,7 +132,7 @@ export const Category = ({ onAdd, qty }) => {
                 <p>${product.product_price}</p>
 
                 <button onClick={() => onAdd(product)}>Add to Cart</button>
-              </div>
+              </div> */
             );
           })}
         </div>

@@ -11,11 +11,16 @@ import "../styles/categories.css";
 
 import { CartContext } from "../contexts/CartContext";
 
-function Cart({ onAdd, onMinus, qty }) {
+function Cart({
+  // onAdd,
+  onMinus,
+  qty,
+}) {
   const { quantity, setQuantity } = qty;
   const {
     cart,
     setCart,
+    handleAdd,
     shipping,
     taxInterest,
     subTotalPrice,
@@ -91,7 +96,7 @@ function Cart({ onAdd, onMinus, qty }) {
                     -
                   </button>
                   <p>{item.quantity}</p>
-                  <button onClick={() => onAdd(item)}>+</button>
+                  <button onClick={() => handleAdd(item)}>+</button>
                 </div>
                 <button onClick={() => onRemove(item.product_id)}>
                   Remove

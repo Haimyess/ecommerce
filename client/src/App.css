@@ -3,7 +3,8 @@
 } */
 
 * {
-  font-family: 'Noto Sans Mono', monospace;
+ /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Roboto', sans-serif;
 }
 .app-container {
   
@@ -59,6 +60,7 @@
 .main-components-wrapper {
   /* border: 1px solid red; */
   height: 100%;
+  overflow: scroll;
 
 }
 

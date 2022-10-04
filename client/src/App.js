@@ -35,22 +35,22 @@ function App() {
 
   const [quantity, setQuantity] = useState(0);
 
-  function handleAdd(product) {
-    const exist = cart.find((item) => item.product_id === product.product_id);
+  // function handleAdd(product) {
+  //   const exist = cart.find((item) => item.product_id === product.product_id);
 
-    if (exist) {
-      setCart(
-        cart.map((item) =>
-          item.product_id === product.product_id
-            ? { ...exist, quantity: exist.quantity + 1 }
-            : item
-        )
-      );
-    } else {
-      setCart([...cart, { ...product, quantity: 1 }]);
-      // console.log(cart);
-    }
-  }
+  //   if (exist) {
+  //     setCart(
+  //       cart.map((item) =>
+  //         item.product_id === product.product_id
+  //           ? { ...exist, quantity: exist.quantity + 1 }
+  //           : item
+  //       )
+  //     );
+  //   } else {
+  //     setCart([...cart, { ...product, quantity: 1 }]);
+  //     // console.log(cart);
+  //   }
+  // }
 
   function handleRemove(product) {
     const exist = cart.find((item) => item.product_id === product.product_id);
@@ -77,7 +77,9 @@ function App() {
               index
               element={
                 <ProductsProvider>
-                  <Home />
+                  <Home
+                  //  onAdd={handleAdd}
+                  />
                 </ProductsProvider>
               }
             />
@@ -87,7 +89,7 @@ function App() {
               path='/cart'
               element={
                 <Cart
-                  onAdd={handleAdd}
+                  // onAdd={handleAdd}
                   onMinus={handleRemove}
                   qty={{ quantity, setQuantity }}
                 />
@@ -97,13 +99,19 @@ function App() {
             <Route
               path='/:type'
               element={
-                <Category onAdd={handleAdd} qty={{ quantity, setQuantity }} />
+                <Category
+                  // onAdd={handleAdd}
+                  qty={{ quantity, setQuantity }}
+                />
               }
             />
             <Route
               path='/product/:id'
               element={
-                <Product onAdd={handleAdd} qty={{ quantity, setQuantity }} />
+                <Product
+                  //  onAdd={handleAdd}
+                  qty={{ quantity, setQuantity }}
+                />
               }
             />
             <Route path='*' element={<NotFound />} />

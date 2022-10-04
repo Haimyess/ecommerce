@@ -11,7 +11,7 @@ import categories from "../media/categoriesHome";
 
 import PopularProducts from "../components/PopularProducts";
 
-function Home() {
+function Home({ onAdd }) {
   return (
     <main className='main-wrapper'>
       <div className='slider-container'>
@@ -24,7 +24,7 @@ function Home() {
             <div className='category-home'>
               <Link className='link-category-home' to={category.link}>
                 <div className='image-container'>
-                  <img className='category-img' src={category.image} />
+                  <img className='category-img-home' src={category.image} />
                 </div>
                 <p className='name-categories-home'>{category.title}</p>
               </Link>
@@ -38,7 +38,7 @@ function Home() {
       <h3 className='categories-home-title'>Popular Products</h3>
       {/* </div> */}
 
-      <PopularProducts />
+      <PopularProducts onAdd={onAdd} />
 
       {/* <Banner />
       <Grid /> */}

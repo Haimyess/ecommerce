@@ -8,8 +8,13 @@
 ------------CATEGORY-------------
 --------------------------------- */
 
+.category-title {
+     margin-bottom: 2rem;
+}
+
 .category-wrapper {
     display: flex;
+    /* flex-direction: column; */
     gap: 1.5rem;
     width: 90%;
     margin: 0 auto;
@@ -33,6 +38,10 @@
 
 }
 
+.category-aside {
+    margin-right: 2rem;
+    width: 200px;
+}
 /* ---------------------------------
 ------------PRODUCT-------------
 --------------------------------- */
@@ -50,4 +59,17 @@
 
 .category-container {
     display: flex;
+    /* flex-direction: row; */
+}
+
+.checkbox-label {
+    width: 200px;
+}
+
+.checkbox-input {
+    margin-right: .3rem;
+}
+
+.heading-filter {
+     margin: 1.5rem 0;
 }

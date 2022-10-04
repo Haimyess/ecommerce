@@ -7,13 +7,14 @@ const Checkbox = (props) => {
 
   return (
     <>
-      <label>
+      <label className='checkbox-label'>
         <input
           id={id}
           type='checkbox'
           onChange={onChange}
           name={name}
           value={value}
+          className='checkbox-input'
         />
         {name}
       </label>

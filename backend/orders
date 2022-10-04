@@ -1,0 +1,27 @@
+-- Orders table
+
+-- When the client is making a purchase we get from them: 
+
+-- order number 12344
+-- Customer details haim yeshurun ....
+-- Shiping yaffe nof .....
+-- Pyment method visa 1234....
+
+
+-- We are not getting the products in the orders table, for that, we need another table.
+
+-- coffee osem ....
+
+SELECT * FROM products;
+
+
+
+-- purchase_info table
+
+-- We use this table to add all the products in a purchase so we can 
+-- show them tothe user and count the quantity of each product within a purchase
+-- to be able to display the popular prodcucts depending on 
+-- this two factor in the homepage.
+
+
+-- name and quantity of the product

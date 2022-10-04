@@ -105,8 +105,8 @@ const Filter = () => {
             id={product.id}
             name={product.brand}
           />
-          &nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          {/* &nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
         </div>
       );
     });
@@ -121,8 +121,8 @@ const Filter = () => {
             id={product.id}
             name={product.type}
           />
-          &nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          {/* &nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
         </div>
       );
     });
@@ -163,9 +163,9 @@ const Filter = () => {
 
   return (
     <>
-      <h4>Brands</h4>
+      <h4 className='heading-filter'>Brands</h4>
       {renderCheckboxBrands()}
-      <h4>Types</h4>
+      <h4 className='heading-filter'>Types</h4>
       {renderCheckboxTypes()}
     </>
   );

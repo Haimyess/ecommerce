@@ -3,7 +3,8 @@
 
 .product-card-wrapper {
 
-    max-width: 15vw;
+    /* max-width: 15vw; */
+    width: 250px;
     height: 100%;
 }
  .card {
@@ -38,7 +39,7 @@
 .product-title {
 
     /* font-size: calc(1vw, 2rem); */
-    font-size: clamp(1rem, 2vw, 1.7rem);
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
 
 }
 
@@ -51,8 +52,13 @@
 
 } */
 /* .product-price {
+    font-size: 1.25rem;
+    color: #fff;
+    width: fit-content;
+    background-color: blue;
+    padding: 0 .5rem;
 
-} */
+}  */
 
 .product-btn  {
     border: none;
