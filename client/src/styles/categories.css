@@ -4,56 +4,118 @@
     padding: 0%;
 }
 
+/* .title-cat {
+    text-align: center;
+} */
+
 
 .grid-wrapper {
-    /* width: 70%; */
+    /* width: 90vw; */
+    /* height: 90vh; */
     margin: 0 auto;
+    width: 90%;
 display: grid;
-grid-template-columns: repeat(12, 50px) ;
-grid-template-rows: auto;
+grid-gap: 1.5rem;
+grid-template-columns: repeat(12, 1fr) ;
+
+/* media query  */
+
+/* grid-template-colums: repeat(1, 1fr) */
+/* grid-template-rows: auto */
+grid-template-rows: 200px 200px 300px;
+
 grid-template-areas: 
-"fruits fruits fruits fruits  vegetables vegetables vegetables  vegetables grains grains grains grains"
-"meat meat meta meat meat meat alcohol alcohol alcohol alcohol alcohol alcohol" 
-"vegan cereals drinks dairy" 
+/* "fruits fruits fruits fruits "
+"alcohol"; */
+
+/* media query */
+/* grid-template-areas: 
+"fruits" 
+"meat"....  */
+
+"fruits fruits fruits fruits vegetables  vegetables vegetables  grains grains grains  drinks drinks"
+"meat meat meat meat meat meat meat alcohol alcohol alcohol alcohol alcohol " 
+"vegan vegan vegan  cereals cereals cereals cereals cereals dairy dairy dairy dairy "  
 ;
 
 }
 
+.grid-item {
+    background-color: aquamarine;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    border-radius:  20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* cursor: pointer; */
+   
+  
+}
 
+
+
+.title-cat {
+    color: rgba(25, 25, 25, 0.73);
+    /* color: var(--main-color); */
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: .5rem;
+
+    /* background-color: rgba(255, 255, 255, .5) ; */
+    background-color: rgba(255, 255, 255, 0.663);
+    /* opacity: 50%; */
+    border-radius: 10px;
+    border: .5px solid var(--main-color);
+}
+
+/* 
 .category-grid {
     padding: 3rem;
-    /* width: 200px; */
+   
     border: 1px solid #000;
-}
+} */
 
 
 .fruits {
     grid-area: fruits;
+    background-image: url("https://live.staticflickr.com/65535/52406585359_3b9597eb46_b.jpg")
 }
 
 .alcohol {
     grid-area: alcohol;
+    background-image: url("https://images.unsplash.com/photo-1610371800811-a7d2a7b6b3e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2126&q=80" );
 }
 .cereals {
     grid-area: cereals;
+    background-image: url("https://images.unsplash.com/photo-1571748982800-fa51082c2224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80");
 }
 .drinks {
     grid-area: drinks;
+    background-image: url("https://live.staticflickr.com/65535/52406800898_be8d4deb00_b.jpg");
 }
 .grains {
     grid-area: grains;
+    background-image: url("https://images.unsplash.com/photo-1542990253-a781e04c0082?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2188&q=80");
 }
 .meat {
     grid-area:meat ;
+    background-image: url("https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80");
 }
 .vegan {
     grid-area: vegan ;
+    background-image: url("https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80");
 }
 .dairy {
     grid-area:dairy ;
+    background-image: url('https://images.unsplash.com/photo-1628088062854-d1870b4553da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80');
+
 }
 .vegetables {
     grid-area: vegetables;
+    background-image: url("https://live.staticflickr.com/65535/52406731445_f3fe505402_b.jpg");
 }
 
 /* 
