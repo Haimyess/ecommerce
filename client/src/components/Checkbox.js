@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 
 const Checkbox = (props) => {
-  const { id, value, onChange, name } = props;
+  const { id, value, onChange, name, quantity } = props;
+  // console.log(quantity);
 
   return (
     <>
@@ -17,6 +18,7 @@ const Checkbox = (props) => {
           className='checkbox-input'
         />
         {name}
+        {/* {Object.values(quantity)} */}
       </label>
     </>
   );

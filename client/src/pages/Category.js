@@ -34,6 +34,8 @@ export const Category = ({ onAdd, qty }) => {
 
   const [searchArray, setSearchArray] = useState([]);
 
+  // const [productsQuantity, setProductsQuantity] = useState("");
+
   const params = useParams();
 
   useEffect(() => {
@@ -59,31 +61,38 @@ export const Category = ({ onAdd, qty }) => {
   //   }
   // }, []);
 
+  console.log(catgProducts.length);
+
   const getProducts = async () => {
     try {
       const res = await fetch(`/api/products/${params.type}`);
       const data = await res.json();
       ////////////////////////////////////////////
 
-      const brands = data.map((brand) => {
-        return {
-          brand: brand.product_brand,
-          id: brand.product_id,
-        };
-      });
+      // const brands = data.map((productBrand) => {
+      //   return {
+      //     brand: productBrand.product_brand,
+      //     id: productBrand.product_id,
+      //   };
+      // });
 
-      const types = data.map((type) => {
-        return {
-          type: type.product_type,
-          id: type.product_id,
-        };
-      });
+      const uniqueBrands = [
+        ...new Map(
+          data.map((brand) => [brand["product_brand"], brand])
+        ).values(),
+      ];
+
+      const uniqueTypes = [
+        ...new Map(
+          data.map((types) => [types["product_type"], types])
+        ).values(),
+      ];
 
       setCatgProducts(data);
       setSearchArray(data);
       setUpdatedCheckboxes(data);
-      setCheckBoxBrand(brands);
-      setCheckBoxType(types);
+      setCheckBoxBrand(uniqueBrands);
+      setCheckBoxType(uniqueTypes);
     } catch (err) {
       console.log(err);
     }
@@ -96,6 +105,8 @@ export const Category = ({ onAdd, qty }) => {
   return (
     <div>
       <h1 className='category-title'>{params.type}</h1>
+      {catgProducts.length === 0 ? "" : <p>{catgProducts.length} Products</p>}
+
       {/* <div> */}
       <div className='category-container'>
         <aside className='category-aside '>
@@ -115,9 +126,9 @@ export const Category = ({ onAdd, qty }) => {
         </aside>
 
         <div className='category-wrapper'>
-          {catgProducts.map((product) => {
+          {catgProducts.map((product, index) => {
             return (
-              <ProductCard onAdd={onAdd} product={product} />
+              <ProductCard key={index} onAdd={onAdd} product={product} />
               /* <div
                 className='product-card'
                 key={product.product_id}

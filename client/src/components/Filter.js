@@ -6,11 +6,22 @@ import Checkbox from "./Checkbox";
 import { CatgContext } from "../pages/Category";
 
 const Filter = () => {
-  const { setCatgProducts, checkBoxBrand, updatedCheckboxes, checkBoxType } =
-    useContext(CatgContext);
+  const {
+    setCatgProducts,
+    checkBoxBrand,
+    updatedCheckboxes,
+    checkBoxType,
+    catgProducts,
+  } = useContext(CatgContext);
 
   const [checkedBrand, setCheckedBrand] = useState([]);
   const [checkedType, setCheckedType] = useState([]);
+
+  const [quantity, setQuantity] = useState([]);
+
+  // console.log(catgProducts);
+
+  // know how many product within brands we have
 
   const handleCheckBrands = (e) => {
     let updatedBrands = [...checkedBrand];
@@ -94,17 +105,53 @@ const Filter = () => {
   //   );
   // });
   // };
+  // useEffect(() => {
+  //   setQuantity(8);
+  // }, []);
+
+  const brands = catgProducts.map((brand) => brand.product_brand);
+  // setQuantity(Object.values(quantityByBrand));
+  // -------------------------------
+
+  const count = (brands) =>
+    brands.reduce(
+      (prev, curr) => ({
+        // prev
+        ...prev,
+        // curr
+        [curr]: (prev[curr] || 0) + 1,
+      }),
+      // initial val
+      quantity
+    );
+
+  // console.log(quantity);
+  const quantityByBrand = count(brands);
+  // console.log(quantityByBrand);
 
   const renderCheckboxBrands = () =>
+    // The checkboxBrand is already unique, just 3 products now.
     checkBoxBrand.map((product) => {
+      const productBrand = product.product_brand;
+
+      // console.log(quantityByBrand["Pakistani Night"]);
+
+      // console.log(count(brands));
+
+      // --------------------------------
+
+      // console.log(Object.values(quantityByBrand));
+
       return (
-        <div className='checkbox-wrapper' key={product.id}>
+        <div className='checkbox-wrapper' key={product.product_id}>
           <Checkbox
             onChange={handleCheckBrands}
-            value={product.brand}
+            value={product.product_brand}
             id={product.id}
-            name={product.brand}
+            name={product.product_brand}
+            // quantity={quantityByBrand}
           />
+          {quantity}
           {/* &nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
         </div>
@@ -114,13 +161,14 @@ const Filter = () => {
   const renderCheckboxTypes = () =>
     checkBoxType.map((product) => {
       return (
-        <div className='checkbox-wrapper' key={product.id}>
+        <div className='checkbox-wrapper' key={product.product_id}>
           <Checkbox
             onChange={handleCheckTypes}
-            value={product.type}
-            id={product.id}
-            name={product.type}
+            value={product.product_type}
+            id={product.product_id}
+            name={product.product_type}
           />
+          {}
           {/* &nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
         </div>
